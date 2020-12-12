@@ -1,17 +1,16 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
 import { Animal } from '../animal';
 import { CommonService } from '../common.service';
-declare const L :any;
 
 @Component({
-  selector: 'app-adoption',
-  templateUrl: './adoption.component.html',
-  styleUrls: ['./adoption.component.css']
+  selector: 'app-perte',
+  templateUrl: './perte.component.html',
+  styleUrls: ['./perte.component.css']
 })
-export class AdoptionComponent implements OnInit {
+export class PerteComponent implements OnInit {
+
   allAnimals: any;
   isEdit = false;
   animalObj = {
@@ -37,7 +36,7 @@ export class AdoptionComponent implements OnInit {
     this.commonService.getAllAnimals().subscribe((response : any) => {
       this.animal = response
     });
-    this.getLatestAdoptionAnimal();
+    this.getLatestLostAnimal();
   }
 
 
@@ -47,15 +46,11 @@ export class AdoptionComponent implements OnInit {
     })
   }
 
-  
-
-  getLatestAdoptionAnimal() {
-    this.commonService.getAdoptionAnimals().subscribe((response) => {
+  getLatestLostAnimal() {
+    this.commonService.getLostAnimals().subscribe((response) => {
       this.allAnimals = response
     })
   }
-
-
 
   editAnimal(animal: any) {
     this.isEdit = true;

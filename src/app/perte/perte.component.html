@@ -1,0 +1,43 @@
+<div class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" [(ngModel)]="searchValue" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </div>
+    <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">photo</th>
+  
+              <th scope="col">Nom</th>
+              <th scope="col">Age</th>
+              <th scope="col">Sexe</th>
+              <th scope="col">Cause</th>
+              <th scope="col">Contact</th>
+              <th scope="col">Supprimer</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+         <tr *ngFor="let animal of allAnimals | searchfilter : searchValue">
+  
+          <td><img src="assets/photos/kouka.jpg" width="250" height="250"></td>
+  
+           <td>{{animal.nom}}</td>
+           <td>{{animal.age}}</td>
+           <td>{{animal.sexe}}</td>
+           <td>{{animal.desc}}</td>
+           <td>{{animal.contact}}</td>
+           <td><button (click)="deleteAnimal(animal)" class="btn btn-danger">Delete</button></td>
+           <td><button type="button" class="btn btn-primary" (click)="details()">Afficher les détails</button>
+           </td>
+  
+         </tr>
+          </tbody>
+        </table>
+  
+       
+        <router-outlet></router-outlet>
+    
+  
+  
+  
+  

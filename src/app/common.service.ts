@@ -1,3 +1,4 @@
+import { animateChild } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -21,6 +22,16 @@ export class CommonService {
 
   getAllAnimals(){
     return this._http.get("http://localhost:3000/animals/")
+  }
+
+  getLostAnimals(){
+    return this._http.get("http://localhost:3000/animals?type=Perte")
+  
+  }
+
+  getAdoptionAnimals(){
+    return this._http.get("http://localhost:3000/animals?type=Adoption")
+
   }
   
   

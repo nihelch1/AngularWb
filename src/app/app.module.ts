@@ -11,6 +11,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { Ng2SearchPipeModule}  from 'ng2-search-filter';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { DetailsComponent } from './details/details.component';
+import { PerteComponent } from './perte/perte.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { DetailsComponent } from './details/details.component';
     AcceuilComponent,
     FormulaireComponent,
     SearchfilterPipe,
-    DetailsComponent
+    DetailsComponent,
+    PerteComponent
   ],
   imports: [
     BrowserModule,

@@ -43,12 +43,23 @@ export class FormulaireComponent implements OnInit {
   constructor(private commonService: CommonService, private _activatedRoute: ActivatedRoute
     , private _router: Router) { }
 
+    check(animal:any){
+      if(animal.type == "Perte"){
 
+        this.perte();
+      }else if (animal.type == "Adoption"){
+        this.adoption();
+      }
+
+  }
 
 
 
   adoption(): void {
     this._router.navigate(['/adoption']);
+  }
+  perte(): void {
+    this._router.navigate(['/perte']);
   }
 
   ngOnInit() {
