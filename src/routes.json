@@ -1,0 +1,3 @@
+{
+
+    "/animals/:type": "/animals?type=:type"  }

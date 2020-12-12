@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "title": "nihel",
+      "author": "nahoula",
+      "id": 1
+    },
+    {
+      "title": "imen",
+      "author": "amouna",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "photos": [
+    {
+      "photo": "sb.PNG"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "animals": [
+    {
+      "nom": "Mimi",
+      "type": "Adoption",
+      "sexe": "Femelle",
+      "age": "5 ans",
+      "desc": "un chien robuste de taille moyenne, à l'allure charpentée et toute en rondeur. Son crâne est large avec des yeux marrons ou noisette foncée qui lui donnent un regard bonhomme et intelligent. Ses oreilles sont pendantes et attachées en arrière de sa tête.",
+      "image": "",
+      "contact": "23017455",
+      "id": 5
+    }
+  ]
+}

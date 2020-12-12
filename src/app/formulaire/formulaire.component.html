@@ -1,0 +1,97 @@
+<html>
+<body>
+  <div class="container">
+
+
+    <form #myForm="ngForm">
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col-6 col-sm-4">
+            <label for="nom">Nom</label>
+
+            <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="animalObj.nom" ngModel required #nom="ngModel">
+            <small class="form-text text-muted" *ngIf="nom.touched && !nom.valid">Entrer un nom</small>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <label for="type">Choisir le but de votre annonce:</label>
+            <select id="annonce" name="type" [(ngModel)]="animalObj.type">
+              <option value="Perte">Perte</option>
+              <option value="Adoption">Adoption</option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <label for="sexe">Sexe</label>
+            <input type="text" class="form-control" name="sexe" [(ngModel)]="animalObj.sexe" ngModel required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" name="age" [(ngModel)]="animalObj.age">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <label for="cause">Description/cause</label>
+            <textarea type="text" class="form-control" name="desc" [(ngModel)]="animalObj.desc"> </textarea>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <img className="align-self-center" height='100 ' width='120' src="{{ImageUrl}}" />
+        <input class="file-upload-input" id="image" name="image" type='file' multiple accept="image/*"
+          (change)="onFileChange($event)" [(ngModel)]="animalObj.image" />
+        
+
+      </div>
+
+
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <label for="contact">Contact</label>
+            <input type="text" class="form-control" name="contact" [(ngModel)]="animalObj.contact">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+      <div class=" col-sm-4">
+        <label for="position">Position</label>
+        <div id="map" name="position"></div>
+
+      </div>
+      </div>
+      </div>
+
+
+      <button type="button" class="btn btn-primary" [disabled]="!myForm.valid"
+        (click)="addAnimal(myForm.value);adoption();" *ngIf="!isEdit">Submit</button>
+
+    </form>
+    <br>
+
+  </div>
+</body>
+
+</html>

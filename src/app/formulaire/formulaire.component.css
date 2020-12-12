@@ -1,0 +1,8 @@
+#map {
+    height: 40vh;
+    width: 60vh;
+    margin: auto;
+  }
+  input.ng-touched.ng-invalid{
+    border: 1px solid red;
+  }

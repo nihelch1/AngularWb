@@ -1,0 +1,25 @@
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+.input-group-btn-left {
+    padding-right: 30px;
+}
+.input-group-btn-right {
+    padding-left: 30px;
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
