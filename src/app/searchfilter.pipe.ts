@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Animal } from './animal';
+import { Animal } from './model/animal';
 
 @Pipe({
   name: 'searchfilter'

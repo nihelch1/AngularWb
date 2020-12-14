@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CommonService } from '../common.service';
+import { Animal } from '../model/animal';
+import { CommonService } from '../shared/common.service';
 
 declare const L: any;
 
@@ -24,20 +25,20 @@ export class FormulaireComponent implements OnInit {
     reader.readAsDataURL(this.Fileimage);
   }
   
-
-  allAnimals: any;
+ 
+  allAnimals:  Array<Animal> =[];
   isEdit = false;
   animalObj = {
-    id: '1',
+    id: '',
     image:'',
     nom: '',
     type: '',
     sexe: '',
     age: '',
     desc: '',
-    contact: '',
-    position: ''
+    contact: ''
   }
+  animal : Animal;
 
 
   constructor(private commonService: CommonService, private _activatedRoute: ActivatedRoute
@@ -120,9 +121,9 @@ export class FormulaireComponent implements OnInit {
 
 
 
-  addAnimal(animalObj: any) {
-    console.log(animalObj)
-    this.commonService.createAnimal(animalObj).subscribe((response) => {
+  addAnimal(animal: Animal) {
+    console.log(animal)
+    this.commonService.createAnimal(animal).subscribe((response) => {
      
 
     })

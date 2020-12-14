@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Animal } from '../animal';
-import { CommonService } from '../common.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Animal } from '../model/animal';
+import { CommonService } from '../shared/common.service';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 
 @Component({
   selector: 'app-perte',
@@ -11,7 +13,7 @@ import { CommonService } from '../common.service';
 })
 export class PerteComponent implements OnInit {
 
-  allAnimals: any;
+  allAnimals:  Array<Animal> =[];
   isEdit = false;
   animalObj = {
     id: '1',
@@ -21,14 +23,14 @@ export class PerteComponent implements OnInit {
     sexe: '',
     age: '',
     desc: '',
-    contact: '',
-    position: ''
+    contact: ''
   }
  
   animal : Animal [] ;
   searchValue:any;
+  age:any;
 
-  constructor(private http: HttpClient,private commonService: CommonService,private route: ActivatedRoute, private router:Router) {
+  constructor(private http: HttpClient,private commonService: CommonService,private route: ActivatedRoute, private router:Router, private modalService:NgbModal) {
     this.animal = [];
    }
 
@@ -39,39 +41,36 @@ export class PerteComponent implements OnInit {
     this.getLatestLostAnimal();
   }
 
+  editAnimal(animal: Animal) {
+    
+    const ref=this.modalService.open(EditFormComponent)
+    ref.componentInstance.animal=animal;
+    console.log(animal);
+    ref.result.then((yes)=>{
+console.log("yess");
+    },
+    (cancel)=>{
+      console.log("cancel");
 
-  getLatestAnimal() {
-    this.commonService.getAllAnimals().subscribe((response) => {
-      this.allAnimals = response
     })
   }
+
+  
 
   getLatestLostAnimal() {
-    this.commonService.getLostAnimals().subscribe((response) => {
+    this.commonService.getLostAnimals().subscribe((response:any) => {
       this.allAnimals = response
     })
   }
 
-  editAnimal(animal: any) {
-    this.isEdit = true;
-    this.animalObj = animal;
-  }
 
-  deleteAnimal(animal: any) {
+  deleteAnimal(animal: Animal) {
     this.commonService.deleteAnimal(animal).subscribe(() => {
-      this.getLatestAnimal();
+      this.getLatestLostAnimal();
     })
   }
-  updateAnimal() {
-    this.isEdit = !this.isEdit;
-    this.commonService.updateAnimal(this.animalObj).subscribe(() => {
-      this.getLatestAnimal();
-    })
-  }
+ 
 
-  details(){
-    this.router.navigate(['details'],{relativeTo: this.route});
-  }
 
   
 

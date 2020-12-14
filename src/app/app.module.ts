@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +10,11 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { Ng2SearchPipeModule}  from 'ng2-search-filter';
 import { SearchfilterPipe } from './searchfilter.pipe';
-import { DetailsComponent } from './details/details.component';
 import { PerteComponent } from './perte/perte.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditFormComponent } from './edit-form/edit-form.component';
+import { GuideComponent } from './guide/guide.component';
+import { CounterComponent } from './counter/counter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,15 +22,20 @@ import { PerteComponent } from './perte/perte.component';
     AcceuilComponent,
     FormulaireComponent,
     SearchfilterPipe,
-    DetailsComponent,
-    PerteComponent
+    PerteComponent,
+    EditFormComponent,
+    GuideComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgbModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

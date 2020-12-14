@@ -22,14 +22,74 @@
   },
   "animals": [
     {
-      "nom": "Mimi",
+      "id": 1,
+      "type": "Adoption",
+      "nom": "napoo",
+      "age": "1",
+      "image": "napoo.jpg",
+      "desc": "à cause de mes études je ne peux plus prendre soin de lui ",
+      "sexe": "male",
+      "contact": "21369820"
+    },
+    {
+      "nom": "snow",
       "type": "Adoption",
       "sexe": "Femelle",
-      "age": "5 ans",
-      "desc": "un chien robuste de taille moyenne, à l'allure charpentée et toute en rondeur. Son crâne est large avec des yeux marrons ou noisette foncée qui lui donnent un regard bonhomme et intelligent. Ses oreilles sont pendantes et attachées en arrière de sa tête.",
-      "image": "",
-      "contact": "23017455",
+      "age": "2",
+      "desc": "à cause de mes nouveaux engagements je ne peux plus avoir le temps pour prendre soin de mon cher chat qui est castré à l'âge de 8 mois.",
+      "image": "snow.jpg",
+      "contact": "51755300",
+      "id": 2
+    },
+    {
+      "nom": "Lucy",
+      "type": "Adoption",
+      "sexe": "Femelle",
+      "age": "3",
+      "desc": "Je cherche qq pour les adopter vu que j'ai déjà 2 chats à la maison avec l' allergie de ma fille c'est pas évident. ",
+      "image": "lucy.jpg",
+      "contact": "23966874",
+      "id": 3
+    },
+    {
+      "nom": "Nanouchka",
+      "type": "Adoption",
+      "sexe": "Femelle",
+      "age": "3",
+      "desc": "je vais voyager et je ne peux prendre ma chienne avec moi ",
+      "image": "nanouchka.jpg",
+      "contact": "59633658",
+      "id": 4
+    },
+    {
+      "nom": "",
+      "type": "Perte",
+      "sexe": "Male",
+      "age": "",
+      "desc": "Chat gris yeux verts (un point sur des oreilles) collier rouge avec clochette rouge identifié par puce perdu le 14 avril au soir a Menzah 9",
+      "image": "chatgris.jpg",
+      "contact": "24785596",
       "id": 5
+    },
+    {
+      "nom": "",
+      "type": "Perte",
+      "sexe": "Male",
+      "age": "",
+      "desc": "Chiot perdu devant clinique les jasmins centre urbain nord Tunis, très gentil de me contacter ! ",
+      "image": "black.jpg",
+      "contact": "51966325",
+      "id": 6
+    },
+    {
+      "nom": "",
+      "type": "Perte",
+      "sexe": "male",
+      "age": "",
+      "desc": " \n\nUrgent chiwawa volé a la Soukra ‼️ ‼️ Il a été volé aujourd'hui par des hommes dans un camion a la Soukra a cote de l'UTC l'Université de Tunis Carthage. Son propriétaire est dans un état lamentable , il ne peut pas vivre sans son chien! SVP si vous l'apercevez quelque part appeler ce numéro  c'est très important! Ces photos ont été prise ce matin, il s'appelle TAZ et porte un collier antipuce blanc et un collier jaune. Forte récompense a la clef.",
+      "image": "taz.jpg",
+      "contact": "28751551",
+      "id": 7
     }
   ]
 }

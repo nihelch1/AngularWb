@@ -1,9 +1,11 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, throwError } from 'rxjs';
-import { Animal } from '../animal';
-import { CommonService } from '../common.service';
+import { Animal } from '../model/animal';
+import { CommonService } from '../shared/common.service';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 declare const L :any;
 
 @Component({
@@ -12,7 +14,7 @@ declare const L :any;
   styleUrls: ['./adoption.component.css']
 })
 export class AdoptionComponent implements OnInit {
-  allAnimals: any;
+  allAnimals:  Array<Animal> =[];
   isEdit = false;
   animalObj = {
     id: '1',
@@ -28,56 +30,75 @@ export class AdoptionComponent implements OnInit {
  
   animal : Animal [] ;
   searchValue:any;
+  age:any;
 
-  constructor(private http: HttpClient,private commonService: CommonService,private route: ActivatedRoute, private router:Router) {
+  constructor(private http: HttpClient,private commonService: CommonService,private route: ActivatedRoute, private router:Router,
+    private modalService:NgbModal) {
     this.animal = [];
    }
 
   ngOnInit():void{
     this.commonService.getAllAnimals().subscribe((response : any) => {
       this.animal = response
+      
     });
     this.getLatestAdoptionAnimal();
+    
   }
 
 
   getLatestAnimal() {
-    this.commonService.getAllAnimals().subscribe((response) => {
+    this.commonService.getAllAnimals().subscribe((response:any) => {
       this.allAnimals = response
     })
-  }
+   
 
-  
+  }
 
   getLatestAdoptionAnimal() {
-    this.commonService.getAdoptionAnimals().subscribe((response) => {
+    this.commonService.getAdoptionAnimals().subscribe((response:any) => {
       this.allAnimals = response
     })
+   
+
   }
 
 
 
-  editAnimal(animal: any) {
-    this.isEdit = true;
-    this.animalObj = animal;
+  editAnimal(animal: Animal) {
+    
+    const ref=this.modalService.open(EditFormComponent)
+    ref.componentInstance.animal=animal;
+    console.log(animal);
+    ref.result.then((yes)=>{
+console.log("yess");
+    },
+    (cancel)=>{
+      console.log("cancel");
+
+    })
+    
+    
+    //this.isEdit = true;
+    //this.animalObj = animal;
   }
 
-  deleteAnimal(animal: any) {
+  filterAnimals(){
+    console.log(this.age);
+     this.commonService.getFilterAnimal(this.age).subscribe((data: any) => {
+       this.allAnimals = data
+     console.log(this.animal);
+     });
+   }
+
+  deleteAnimal(animal: Animal) {
     this.commonService.deleteAnimal(animal).subscribe(() => {
-      this.getLatestAnimal();
+      this.getLatestAdoptionAnimal();
     })
   }
-  updateAnimal() {
-    this.isEdit = !this.isEdit;
-    this.commonService.updateAnimal(this.animalObj).subscribe(() => {
-      this.getLatestAnimal();
-    })
-  }
+ 
 
-  details(){
-    this.router.navigate(['details'],{relativeTo: this.route});
-  }
-
+  
   
 
 }

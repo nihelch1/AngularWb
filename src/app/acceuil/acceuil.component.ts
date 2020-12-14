@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CommonService } from '../common.service';
+import { CommonService } from '../shared/common.service';
 
 @Component({
   selector: 'app-acceuil',
@@ -9,7 +9,7 @@ import { CommonService } from '../common.service';
 })
 export class AcceuilComponent implements OnInit {
  
-
+colorVal ='#4682B4';
   constructor(private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {

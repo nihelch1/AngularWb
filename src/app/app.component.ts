@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Animal } from './animal';
-import { CommonService } from './common.service';
+import { Animal } from './model/animal';
+import { CommonService } from './shared/common.service';
 
 declare const L: any;
 @Component({

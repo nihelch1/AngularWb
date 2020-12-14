@@ -1,0 +1,47 @@
+<div class="modal-header bg-primary text-white">
+    <h4 class="modal-title" id="modal-basic-title">Modifier </h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" *ngIf="editForm">
+        <div class="form-group row d-flex justify-content-center align-items-center">
+            <label for="desc" class="col-form-label col-sm-2 text-right">Description:</label>
+            <div class="col-sm-5">
+                <input type="text" formControlName="desc" class="form-control"/>
+                <div *ngIf="editFormData.desc.invalid && (editFormData.desc.dirty || editFormData.desc.touched)"
+                    class="alert-danger">
+                    <span>La description est obligatoire!</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center align-items-center">
+            <label for="sexe" class="col-form-label col-sm-2 text-right">Sexe:</label>
+            <div class="col-sm-5">
+                <input type="text" formControlName="sexe" class="form-control" />
+                <div *ngIf="editFormData.sexe.invalid && (editFormData.sexe.dirty || editFormData.sexe.touched)"
+                    class="alert-danger">
+                    <span>Le sexe est obligatoire!</span>
+                </div>
+            </div>
+        </div>
+       
+        <div class="form-group row d-flex justify-content-center align-items-center">
+            <label for="contact" class="col-form-label col-sm-2 text-right">Contact:</label>
+            <div class="col-sm-5">
+                <input type="text" formControlName="contact" class="form-control" />
+                <div *ngIf="editFormData.contact.invalid && (editFormData.contact.dirty || editFormData.contact.touched)"
+                    class="alert-danger">
+                    <span>Le numéro de téléphone est obligatoire!</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button [disabled]="isLoading" class="btn btn-primary mr-2" (click)="modal.close('Cancel')">Cancel</button>
+            <button [disabled]="isLoading" class="btn btn-primary mr-2">Modifier</button>
+        </div>
+
+
+
+
+
+    </form>
+</div>

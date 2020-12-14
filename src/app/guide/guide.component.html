@@ -1,0 +1,95 @@
+
+
+<script>$(document).ready(function(){
+
+    [...document.querySelectorAll('.first-column')].map(column => {
+    column.style.setProperty('--animation', 'slide');
+    column.style.setProperty('height', '200%');
+    column.innerHTML = column.innerHTML + column.innerHTML;
+    });
+    
+    });
+</script>
+<br>
+    <h3 style="font-family:Castellar;" [ngStyle]="{'color':colorVal}">Vous souhaitez adopter un chat ou un chien ?</h3>
+    <h4> Apprenez à bien  le choisir , posez-vous les bonnes questions ,(coût, formalités, élevage, santé…) .
+        Apprenez ayssi les formalités et comment préparer l'arrivée de votre annimal à la maison.</h4>
+        <br>
+        <br>
+<div class="myimages">
+    <div class="first-column"> <a href="#"><img src="https://loremflickr.com/320/240?random=1" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=5" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=9" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=13" alt="image"></a> </div>
+    <div class="first-column"> <a href="#"><img src="https://loremflickr.com/320/240/dog" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=6" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=10" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=14" alt="image"></a> </div>
+    <div class="first-column"> <a href="#"><img src="https://loremflickr.com/320/240?random=3" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=7" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=11" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=15" alt="image"></a> </div>
+    <div class="first-column"> <a href="#"><img src="https://loremflickr.com/320/240?random=4" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=8" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=12" alt="image"></a> <a href="#"><img src="https://loremflickr.com/320/240?random=16" alt="image"></a> </div>
+</div>
+<app-counter [val]="burgers" [name]="'Burger'" (changed)="burgerChanged($event)"></app-counter>
+
+<br>
+
+<b >
+    Nombre de personnes qui trouvent ça utile : {{totalItems}} 
+</b>
+<br>
+<br>
+<h2 style="font-family:Brush Script MT;">
+    L'âge idéal pour acquérir un chiot
+</h2>
+<div class="container">
+    <img src="./../../assets/dog1.jpg" style="margin-top: auto;" width="200" >  
+    <br>
+    <p>
+        L'âge idéal pour adopter un chiot de compagnie se situe généralement entre 2 et 3 mois. Le chiot est sevré à 6 semaines, mais a encore besoin de sa mère quelque temps. Cependant rien ne vous empêche de choisir votre chiot avant cet âge et de le laisser à l'élevage jusqu'au jour de l'achat.
+
+Passé 3 à 4 mois, le chiot a pris de nombreuses habitudes, il est plus difficile de l'éduquer mais cela n'est pas impossible.
+    </p>
+</div>
+
+<h2 style="font-family:Brush Script MT;">
+    Que préfère manger le chien ?
+</h2>
+<div class="container">
+    <img src="./../../assets/dog2.jpg" style="margin-top: auto;" width="200" > 
+    <br> 
+    <p>
+        Le chien ne doit pas vous mener par le bout du nez, mais vous pouvez, sans céder à ses caprices, connaître ses préférences. Il faut tout d’abord noter que la majorité de ses préférences alimentaires sont innées.
+
+Étant donné la nature carnivore du chien, les produits d’origine animale sont généralement beaucoup plus appréciés que les produits d’origine végétale. Le goût pour certains aliments peut cependant aussi s’acquérir.
+
+C’est juste avant le sevrage (de l’âge de 4 à 7 semaines) que se prennent des habitudes alimentaires très durables, sinon définitives.
+       </p>
+</div>
+<h2 style="font-family:Brush Script MT;">
+    Vaccins pour le chat
+</h2>
+<div class="container">
+    <img src="./../../assets/kitten.jpg" style="margin-top: auto;" width="200" >  
+    <br>
+    <p>
+    
+
+Quels vaccins pour quel chat ?
+
+La vaccination du chat doit se faire en tenant compte de ses besoins, de son mode de vie et de son environnement.
+
+Si les chats restent dans la maison et ne fréquentent pas d’environnement avec possibilité de promiscuité, de type jardins ou pensions, ils peuvent n’être vaccinés que pour les trois maladies virales représentées par les deux formes respiratoires (rhinotrachéite virale et calicivirose) et la forme gastro-intestinale .
+
+
+       </p>
+</div>
+<h2 style="font-family:Brush Script MT;">
+    Hygiène de la peau du chat
+</h2>
+<div class="container">
+    <img src="./../../assets/shower.jpg" style="margin-top: auto;" width="200" >  
+    <br>
+    <p>
+        Il est important de brosser le chat chaque jour avec un gant en latex pourvu de petites protubérances douces qui permettent de masser la peau et d’éliminer les pellicules et le poil qui doit tomber.
+
+L’idéal est ensuite d’éliminer le poil resté en surface avec une petite éponge imbibée d’eau et de jus de citron (à parts égales) et bien essorée.
+
+La prophylaxie contre les puces est indispensable toute l’année, même si les chats ne sortent pas, car les chaussures ou la terre des pots de la maison peuvent être vecteurs de larves de puces qui vont infester le chat.
+
+L’ensemble de ces pratiques permet de préserver l’excellent état de la peau et du pelage, de prévenir les dermatoses et de remarquer à temps des tuméfactions insoupçonnées.
+
+ </p>
+</div>

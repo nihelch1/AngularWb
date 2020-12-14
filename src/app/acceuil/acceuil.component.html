@@ -2,12 +2,8 @@
 <!--link rel="stylesheet" href="acceuil.component.css"!-->
 <div class="row">
 <div class="column">
-    <br>
-<br>
-<button  type="button" (click)="showForm()" class="btn btn-info">Ajouter une annonce</button>
-<br>
-<br>
-<h1>Le site le plus simple et
+
+<h1 [ngStyle]="{'color':colorVal}">Le site le plus simple et
 
     rapide pour adopter
     
@@ -15,10 +11,16 @@
     
     Découvrez nos annonces diverses.</h1>
 
-    <h2>Adopter un pet, c’est lui sauver la vie!
+    <h2 style="font-family:Helvetica;">Adopter un pet, c’est lui sauver la vie!
         </h2> <br>
         <h6> Nombreuses sont les villes où l’on trouve des chiens abandonnés à presque tous les coins de rue. Différentes associations tentent de faire
              comprendre aux gens qu’il est préférable d’adopter au lieu d’acheter un chien de race.</h6>
+
+             <br>
+             <br>
+             <button  type="button" (click)="showForm()" class="btn btn-info">Ajouter une annonce</button>
+             <br>
+             <br>
 </div>
 <div class="column">
     <br>
